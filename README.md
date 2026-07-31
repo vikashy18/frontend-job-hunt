@@ -2,7 +2,8 @@
 
 Simple repo for daily Frontend / React job leads.
 
-- `job-leads.md` — curated openings (appended by the daily Cursor automation)
+- `job-leads.md` — curated openings (appended by the Cursor automation)
+  - Columns include **Date found** and **Time found** (IST) so you can see which automation run added each lead
 
 ## Setup for Cursor Automations
 
