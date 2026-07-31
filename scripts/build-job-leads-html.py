@@ -519,7 +519,9 @@ TEMPLATE = """<!DOCTYPE html>
 
 def main() -> None:
     leads = parse_leads(MD_PATH.read_text())
-    html = TEMPLATE.replace("__LEADS_JSON__", json.dumps(leads, ensure_ascii=False))
+    # TEMPLATE uses {{ }} escapes from an earlier .format()-based version.
+    html = TEMPLATE.replace("{{", "{").replace("}}", "}")
+    html = html.replace("__LEADS_JSON__", json.dumps(leads, ensure_ascii=False))
     HTML_PATH.write_text(html)
     print(f"Wrote {HTML_PATH.name} with {len(leads)} leads")
 
